@@ -15,7 +15,7 @@ pub fn main() {
     Lua::new().context(|lua| {
         let res: u64 = lua.load(&format!(
             r#"
-                return {} + {}
+                return {} * {}
             "#, x, y)).eval::<u64>().unwrap();
 
         env::commit(&res);

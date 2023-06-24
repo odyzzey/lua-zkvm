@@ -1,5 +1,3 @@
-use core::str;
-
 use methods::{METHOD_NAME_ELF, METHOD_NAME_ID};
 use risc0_zkvm::{
     serde::{from_slice, to_vec},
@@ -20,8 +18,8 @@ fn main() {
     let session = exec.run().unwrap();
     let z: u64 = from_slice(session.journal.as_slice()).unwrap();
 
-    println!("{x} + {y} = {z}");
-    // Prints: 7 + 8 = 15
+    println!("{x} * {y} = {z}");
+    // Prints: 7 * 8 = 56 
     
     // proving completes but receipt verification fails
     // session.prove().unwrap();
